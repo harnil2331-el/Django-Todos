@@ -1,0 +1,19 @@
+{% extends 'todo/base.html'%}
+{% block content %}
+<br>
+<a href="{%url 'home'%}">Home</a>
+<hr>
+<h1>{{todo.title}}</h1>
+{{error}}
+<form class=""  method="post">
+{{ form.as_p}}
+<button type="submit" name="update">update</button>
+</form>
+
+<form class="" action="{% url 'complete' todo.id %}" method="post">
+<button type="submit" name="complete">complete</button>
+</form>
+<form class="" action="{% url 'deletetodo' todo.id %}" method="post">
+<button type="submit" name="delete">delete</button>
+</form>
+{% endblock %}

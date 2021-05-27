@@ -1,0 +1,18 @@
+{% extends 'todo/base.html'%}
+{% block content %}
+<a href="{%url 'createtodos'%}">create new</a>
+<a href="{%url 'home'%}">Home</a>
+<hr>
+<ul>
+  {% for todo in todos %}
+<li>
+  <a href="{% url 'viewtodo' todo.id %}">
+  {%if todo.important %}<b>{% endif %}{{todo.title}}{%if todo.important %}</b>{% endif %}
+  {%if todo.memo%}<br>{{todo.memo}}{%endif%}
+  </a>
+  <hr>
+</li>
+
+{%endfor%}
+</ul>
+{% endblock %}

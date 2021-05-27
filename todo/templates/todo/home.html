@@ -1,0 +1,14 @@
+{% extends 'todo/base.html'%}
+{% block content %}
+
+
+<a href="{%url 'createtodos'%}">create new</a>
+<a href="{%url 'currenttodoss'%}">current</a>
+<a href="{%url 'completedtodos'%}">completed</a>
+<hr>
+<h1>Welcome to todos</h1>
+{% if u != None %}
+<h2>completed ({{c}})</h2>
+<h2>Active   ({{todos}})</h2>
+{%endif%}
+{% endblock %}

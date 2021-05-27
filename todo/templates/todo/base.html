@@ -1,0 +1,17 @@
+
+
+{% if user.is_authenticated %}
+Logged in as {{ user.username}}
+
+<form  action="{% url 'logoutuser' %}" method="post">
+<button type="submit" name="logout">logout</button>
+</form>
+{% else %}
+<a href="{% url 'signupuser' %}">signup</a>
+<a href="{% url 'loginuser' %}">login</a>
+
+
+{% endif %}
+
+<br>
+{% block content %}{% endblock %}
